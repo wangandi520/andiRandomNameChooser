@@ -110,7 +110,7 @@ MyQWidget::MyQWidget()
     fileStatus->setFont(use1);
     time->setFont(use1);
     //设置大小
-    fileList->setFixedWidth(160);
+    //fileList->setFixedWidth(160);
     showmsg->setMinimumWidth(600);
     showmsg->setAlignment(Qt::AlignCenter);
     //设置状态栏
@@ -124,7 +124,6 @@ MyQWidget::MyQWidget()
     topLayout->addWidget(setButton);
     topLayout->addWidget(repeat);
     topLayout->addWidget(restName);
-    //topLayout->addStretch();
     topLayout->addWidget(fontSizeMsg);
     topLayout->addWidget(fontSize);
     topLayout->addWidget(speedLabel);
@@ -137,9 +136,14 @@ MyQWidget::MyQWidget()
     bottomRightLayout->setAlignment(Qt::AlignHCenter);
     buttonLayout->addWidget(startButton);
     buttonLayout->addWidget(absentButton);
+    buttonLayout->setStretchFactor(startButton,1);
+    buttonLayout->setStretchFactor(absentButton,1);
+
     bottomLayout->addLayout(bottomLeftLayout);
     bottomLayout->addLayout(bottomRightLayout);
-    //bottomLayout->addStretch();
+    //bottomLayout->setStretch(1,4);
+    bottomLayout->setStretchFactor(bottomLeftLayout,1);
+    bottomLayout->setStretchFactor(bottomRightLayout,4);
     mainLayout->addLayout(topLayout);
     mainLayout->addLayout(bottomLayout);
     mainLayout->addWidget(status);
