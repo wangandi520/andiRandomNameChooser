@@ -3,6 +3,7 @@
 ######################################################################
 QT       += network
 TEMPLATE = app
+TARGET = ../debug/debug.exe
 DEPENDPATH += .
 INCLUDEPATH += .
 

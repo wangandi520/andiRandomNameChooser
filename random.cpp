@@ -94,9 +94,9 @@ MyQWidget::MyQWidget()
     resetButton->setToolTip(tr("重新读取文件列表中的所有文件"));
     clockTimer->start(1000);
     //设置字体尺寸范围
-    fontSize->setRange(50,150);
-    fontSize->setValue(150);
-    speed->setRange(40,5000);
+    fontSize->setRange(20,150);
+    fontSize->setValue(110);
+    speed->setRange(5,5000);
     speed->setValue(40);
     repeat->setChecked(true);
     //设置时间
@@ -114,8 +114,7 @@ MyQWidget::MyQWidget()
     //设置状态栏
     status->addWidget(fileStatus, 100);
     status->addWidget(time,35);
-    //this->setFixedSize(1000, 600);
-    this->setMinimumSize(1000,600);
+    this->setFixedSize(800, 500);
 
     topLayout->addWidget(openButton);
     topLayout->addWidget(resetButton);
@@ -322,6 +321,7 @@ void MyQWidget::absentAdd()
             file.open(QFile::Append | QIODevice::Text);
             QTextStream write(&file);
 
+            write << endl;
             write << QDateTime::currentDateTime().toString("hh:mm:ss") << endl;
             write << showmsg->text() << endl;
             write << endl;
@@ -513,8 +513,8 @@ void MyQWidget::donateWindows()
     //捐赠按钮
     //donateMes->setText(tr("支付宝 : 30204977@qq.com"));
     //donateMes->setInformativeText(tr("点击访问我的支付宝首页"));
-    donateMes->setWindowTitle(tr("支付宝 : 30204977@qq.com，扫描二维码捐赠，多谢您的支持。"));
-    donateMes->setIconPixmap(QPixmap("alipay.png"));
+    donateMes->setWindowTitle(tr("扫面二维码捐赠，多谢您的支持。"));
+    donateMes->setIconPixmap(QPixmap("D:\\aw.jpg"));
     QPushButton *yesButton = donateMes->addButton(tr("关闭"),QMessageBox::YesRole);
     donateMes->exec();
 
