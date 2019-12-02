@@ -89,12 +89,14 @@ MyQWidget::MyQWidget()
     absentButton->setDisabled(true);
     //设置鼠标悬停提醒
     startButton->setToolTip(tr("快捷键：空格"));
+    //startButton->setMaximumWidth(300);
     absentButton->setToolTip(tr("快捷键：B"));
+    //absentButton->setMaximumWidth(300);
     openButton->setToolTip(tr("支持文件：一行一个名字的txt文件"));
     resetButton->setToolTip(tr("重新读取文件列表中的所有文件"));
     clockTimer->start(1000);
     //设置字体尺寸范围
-    fontSize->setRange(20,150);
+    fontSize->setRange(20,600);
     fontSize->setValue(110);
     speed->setRange(5,5000);
     speed->setValue(40);
@@ -109,12 +111,12 @@ MyQWidget::MyQWidget()
     time->setFont(use1);
     //设置大小
     fileList->setFixedWidth(160);
-    showmsg->setFixedWidth(600);
+    showmsg->setMinimumWidth(600);
     showmsg->setAlignment(Qt::AlignCenter);
     //设置状态栏
     status->addWidget(fileStatus, 100);
     status->addWidget(time,35);
-    this->setFixedSize(800, 500);
+    this->setMinimumSize(800, 600);
 
     topLayout->addWidget(openButton);
     topLayout->addWidget(resetButton);
@@ -122,7 +124,7 @@ MyQWidget::MyQWidget()
     topLayout->addWidget(setButton);
     topLayout->addWidget(repeat);
     topLayout->addWidget(restName);
-    topLayout->addStretch();
+    //topLayout->addStretch();
     topLayout->addWidget(fontSizeMsg);
     topLayout->addWidget(fontSize);
     topLayout->addWidget(speedLabel);
@@ -132,12 +134,12 @@ MyQWidget::MyQWidget()
     bottomLeftLayout->addWidget(fileList);
     bottomRightLayout->addWidget(showmsg);
     bottomRightLayout->addLayout(buttonLayout);
+    bottomRightLayout->setAlignment(Qt::AlignHCenter);
     buttonLayout->addWidget(startButton);
     buttonLayout->addWidget(absentButton);
-    bottomRightLayout->setAlignment(Qt::AlignHCenter);
     bottomLayout->addLayout(bottomLeftLayout);
-    bottomLayout->addStretch();
     bottomLayout->addLayout(bottomRightLayout);
+    //bottomLayout->addStretch();
     mainLayout->addLayout(topLayout);
     mainLayout->addLayout(bottomLayout);
     mainLayout->addWidget(status);
