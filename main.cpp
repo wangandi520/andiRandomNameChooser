@@ -1,4 +1,15 @@
 /*
+0.42版更新：
+更新捐赠二维码
+
+0.41版更新：
+添加速度调节
+修复bug
+可快速捐赠
+
+0.4版更新：
+支持模板的xls文件
+
 0.3版更新：
 增加了重置列表按钮
 更改了文件切换时重新读取文件的设计
@@ -30,8 +41,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QTextCodec *code = QTextCodec::codecForName("utf-8");
-    QTextCodec::setCodecForTr(code);
+//    QTextCodec *code = QTextCodec::codecForName("utf-8");
+//    QTextCodec::setCodecForTr(code);
 
     MyQWidget *window = new MyQWidget;
     window->show();
