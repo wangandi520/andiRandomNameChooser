@@ -15,3 +15,6 @@ SOURCES += main.cpp random.cpp \
     excelengine.cpp
 RC_FILE = my.rc
 CONFIG  += qaxcontainer
+
+RESOURCES += \
+    images/images.qrc

@@ -520,7 +520,7 @@ void MyQWidget::donateWindows()
     //donateMes->setText(tr("支付宝 : 30204977@qq.com"));
     //donateMes->setInformativeText(tr("点击访问我的支付宝首页"));
     donateMes->setWindowTitle(tr("支付宝:30204977@qq.com，扫二维码捐赠，多谢支持。"));
-    donateMes->setIconPixmap(QPixmap("alipay.png"));
+    donateMes->setIconPixmap(QPixmap(":/img/alipay.png"));
     QPushButton *yesButton = donateMes->addButton(tr("关闭"),QMessageBox::YesRole);
     donateMes->exec();
 
